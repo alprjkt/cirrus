@@ -1,6 +1,6 @@
 env:
     credentials: "ENCRYPTED[!20416f5e1a8c05a6f76cbc8a49f6d407ebbb375dba5ab0c4a3e47e43891c268f975cf88fe398e0bf9e92312a4bd4b6fb!]"
-    rcloneconfig: "ENCRYPTED[!943de9901b74f0eb9873e7d5aca61f9902df0846112067c35056b0acc6cac4c6786fb54c0f17aefeb3fd66bea0575dfe!]"
+    rcloneconfig: "ENCRYPTED[!cd4c4a3569ac2aaad5ccfa5c4a28b6a2b4b5873fb33306480359f213485f7076b7e1aab03557e1059e06ba000b2c4851!]"
     tokentl: "ENCRYPTED[!deddb3f79fbea3f788d614602eef7af66c5bfa0897318de20652f4c51737308b8c9e594424e5160d7d6c34a951310064!]"
     idtl: "ENCRYPTED[!323ab361d49c6fec45d5a17dfb4616fa7679cc0c089ed65d8f538d5769e7155462e05fdd585615c774774daf7700c853!]"
     lunch: lunch qassa_ysl-userdebug
