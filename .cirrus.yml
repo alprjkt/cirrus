@@ -18,8 +18,8 @@ task:
        - export DEBIAN_FRONTEND=noninteractive
        - mkdir -p ~/.config/rclone
        - echo "$rcloneconfig" > ~/.rclone.conf
-       - git config --global user.name "ALprjkt"
-       - git config --global user.email "ALprjkt168145100+ALprjkt@users.noreply.github.com"
+       - git config --global user.name "k4ngcaribug"
+       - git config --global user.email "168145100+k4ngcaribug@users.noreply.github.com"
        - echo "$credentials" > ~/.git-credentials
        - git config --global credential.helper store --file=~/.git-credentials
        - mkdir -p ~/ccache
@@ -50,9 +50,9 @@ task:
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
   Build_script:
-      - export BUILD_USERNAME="ALprjkt"
+      - export BUILD_USERNAME="k4ngcaribug"
       - export BUILD_HOSTNAME="Cirrus"
-      - export KBUILD_BUILD_USER="ALprjkt"
+      - export KBUILD_BUILD_USER="k4ngcaribug"
       - export KBUILD_BUILD_HOST="Cirrus"
 #      - export WITH_GAPPS=true
       - export ALLOW_MISSING_DEPENDENCIES=true
