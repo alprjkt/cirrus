@@ -3,8 +3,8 @@ env:
     rcloneconfig: "ENCRYPTED[!fb0af3f9a4f20b5eedeadbf0e9c5b5c767051769d19b7691ed69eff173ce55c593c3cbfec61eae196243c49bbdbd56bd!]"
     tokentl: "ENCRYPTED[!deddb3f79fbea3f788d614602eef7af66c5bfa0897318de20652f4c51737308b8c9e594424e5160d7d6c34a951310064!]"
     idtl: "ENCRYPTED[!323ab361d49c6fec45d5a17dfb4616fa7679cc0c089ed65d8f538d5769e7155462e05fdd585615c774774daf7700c853!]"
-    lunch: lunch xdroid_ginkgo-userdebug
-    make: make xd
+    lunch: lunch arrow_ginkgo-user
+    make: make bacon
 
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
@@ -35,13 +35,13 @@ task:
       - ./w.sh
 
   Sync_script:
-      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Xdroid-CLO Source"
+      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Start sync Arrow Source"
       - mkdir -p ~/rom
       - cd ~/rom
       - sudo curl --create-dirs -L -o /usr/local/bin/repoo -O -L https://storage.googleapis.com/git-repo-downloads/repo
       - sudo chmod a+rx /usr/local/bin/repoo
-      - repo init -q --no-repo-verify --depth=1 -u https://github.com/xdCLO/xd_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
-      - git clone --depth 1 https://github.com/k4ngcaribug/local_manifest.git -b xd-ginkgo .repo/local_manifests
+      - repo init -q --no-repo-verify --depth=1 -u https://github.com/ArrowOS-Revived/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
+      - git clone --depth 1 https://github.com/k4ngcaribug/local_manifest.git -b ginkgo-11 .repo/local_manifests
       - rm -rf .repo/repo && git clone https://gerrit.googlesource.com/git-repo .repo/repo
 #      - sed -i 's|ssh://git@github.com|https://github.com|g' .repo/manifests/snippets/qassa.xml
 #      - repoo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 --fail-fast
@@ -57,10 +57,10 @@ task:
 #      - export WITH_GAPPS=true
       - export ALLOW_MISSING_DEPENDENCIES=true
       - sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build Xdroid-CLO for Ginkgo Start!"
+      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build Arrow for Ginkgo Start!"
       - ./collect.sh
 #      - ./final.sh
-      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd ~/rom/out/target/product/ginkgo/ && ls XdCLO*.zip) Completed!"
+      - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd ~/rom/out/target/product/ginkgo/ && ls Arrow*.zip) Completed!"
 
   Upload_script:
       - ./upload.sh
